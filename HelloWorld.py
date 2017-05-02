@@ -8,9 +8,11 @@ myriadProFont = pygame.font.SysFont("Myriad Pro", 48)
 
 helloWorld = myriadProFont.render("Hello World", 1, (255,0 ,255),(255,255,255))
 
+helloWorldSize = helloWorld.get_size() # getting size of helloworld string
 
 x,y = 0,0 # to use the position of helloworld string
 
+directionX = 1
 clock = pygame.time.Clock()
 
 while 1:
@@ -25,6 +27,9 @@ while 1:
     screen.fill((0,0,0)) # it blacks the screen on start of every loop
     screen.blit(helloWorld,(x,y))
     
-    x+=5
+    x+=5 * directionX
+    
+    if x+ helloWorldSize[0] > 800:
+        directionX*=-1
     
     pygame.display.update()
