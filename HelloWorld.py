@@ -2,7 +2,7 @@ import pygame, sys
 
 pygame.init()
 
-windowSize = (800,600 )
+windowSize = (800,600)
 screen = pygame.display.set_mode(windowSize)
 myriadProFont = pygame.font.SysFont("Myriad Pro", 48)
 
@@ -12,7 +12,7 @@ helloWorldSize = helloWorld.get_size() # getting size of helloworld string
 
 x,y = 0,0 # to use the position of helloworld string
 
-directionX = 1
+directionX,directionY = 1, 1
 clock = pygame.time.Clock()
 
 while 1:
@@ -28,8 +28,11 @@ while 1:
     screen.blit(helloWorld,(x,y))
     
     x+=5 * directionX
+    y+=5 * directionY
     
     if x+ helloWorldSize[0] > 800 or x<=0: # this improves the left motion
         directionX*=-1
+    if y+ helloWorldSize[1] > 600 or y<=0: # same as X direction
+        directionY*=-1        
     
     pygame.display.update()
