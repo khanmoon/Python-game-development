@@ -29,7 +29,7 @@ while 1:
     
     x+=5 * directionX
     
-    if x+ helloWorldSize[0] > 800:
+    if x+ helloWorldSize[0] > 800 or x<=0: # this improves the left motion
         directionX*=-1
     
     pygame.display.update()
