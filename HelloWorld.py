@@ -25,14 +25,11 @@ while 1:
             sys.exit()
             
     screen.fill((0,0,0)) # it blacks the screen on start of every loop
-    screen.blit(helloWorld,(x,y))
+     
     
-    x+=5 * directionX
-    y+=5 * directionY
+    mouseposition = pygame.mouse.get_pos()
+    x,y = mouseposition
     
-    if x+ helloWorldSize[0] > 800 or x<=0: # this improves the left motion
-        directionX*=-1
-    if y+ helloWorldSize[1] > 600 or y<=0: # same as X direction
-        directionY*=-1        
+    screen.blit(helloWorld,(x,y))  
     
     pygame.display.update()
