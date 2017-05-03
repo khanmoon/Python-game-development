@@ -2,12 +2,16 @@ import pygame, sys
 
 pygame.init()
 
+pygame.mixer.init() # initialize sound mixer
+
 windowSize = (800,600)
 screen = pygame.display.set_mode(windowSize)
 
 helloWorld = pygame.image.load("PS circle.png") # now rendering image
 
 helloWorldSize = helloWorld.get_size() # getting size of helloworld string
+
+sound = pygame.mixer.Sound("Pluralsight.wav")
 
 pygame.mouse.set_visible(0) # this hides mouse cursor
 
@@ -33,9 +37,17 @@ while 1:
     
     if x+helloWorldSize[0]>800: #fix right side
         x = 800 - helloWorldSize[0]
+        sound.stop() # to ensure that sound is not playing
+        sound.play()
         
     if y + helloWorldSize[1] > 600: # fix for bottom
         y= 600 - helloWorldSize[1] 
+        sound.stop()
+        sound.play()
+    if x == 0 or y==0:
+        sound.stop()
+        sound.play()        
+        
     
     screen.blit(helloWorld,(x,y))  
     
