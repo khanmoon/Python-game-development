@@ -52,10 +52,15 @@ while 1:
         y= 600 - helloWorldSize[1] 
         sound.stop()
         sound.play()
-    if x == 0 or y==0:
+    if x <= 0: # fixing the boundry crossing problem
+        x=0
         sound.stop()
         sound.play()        
         
+    if y <= 0: # fixing the boundry crossing problem
+        y=0
+        sound.stop()
+        sound.play()     
     
     screen.blit(helloWorld,(x,y))  
     
