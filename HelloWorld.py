@@ -9,6 +9,8 @@ helloWorld = pygame.image.load("PS circle.png") # now rendering image
 
 helloWorldSize = helloWorld.get_size() # getting size of helloworld string
 
+pygame.mouse.set_visible(0) # this hides mouse cursor
+
 x,y = 0,0 # to use the position of helloworld string
 
 directionX,directionY = 1, 1
