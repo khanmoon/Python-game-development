@@ -29,11 +29,19 @@ while 1:
         if event.type == pygame.QUIT:
             sys.exit()
             
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                x+=5
+            if event.key == pygame.K_LEFT:
+                x-=5
+            if event.key == pygame.K_DOWN:
+                y+=5
+            if event.key == pygame.K_UP:
+                y-=5                
     screen.fill((0,0,0)) # it blacks the screen on start of every loop
      
     
-    mouseposition = pygame.mouse.get_pos()
-    x,y = mouseposition
+    
     
     if x+helloWorldSize[0]>800: #fix right side
         x = 800 - helloWorldSize[0]
