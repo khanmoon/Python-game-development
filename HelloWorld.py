@@ -4,9 +4,8 @@ pygame.init()
 
 windowSize = (800,600)
 screen = pygame.display.set_mode(windowSize)
-myriadProFont = pygame.font.SysFont("Myriad Pro", 48)
 
-helloWorld = myriadProFont.render("Hello World", 1, (255,0 ,255),(255,255,255))
+helloWorld = pygame.image.load("PS circle.png") # now rendering image
 
 helloWorldSize = helloWorld.get_size() # getting size of helloworld string
 
